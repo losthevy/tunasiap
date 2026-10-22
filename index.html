@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TUNASIAP · Siap Dulu, Baru Restu</title>
+<meta name="description" content="Purwarupa TUNASIAP, uji siap budaya digital siswa kelas X bersama orang tua sebelum izin media sosial diberikan.">
+<style>
+:root{--bg:#fff;--soft:#f7f6f3;--line:#e9e9e7;--ink:#37352f;--mute:#787774;--acc:#2f6f4f;--accs:#e8f1ec;
+--g:#2f855a;--gs:#e6f4ea;--y:#b7791f;--ys:#fbf3db;--r:#c53030;--rs:#fdeaea;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:#fffffff2;backdrop-filter:blur(6px);z-index:5}
+.bar{display:flex;align-items:center;gap:12px;height:56px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.5px}
+.logo i{width:26px;height:26px;border-radius:7px;background:var(--acc);display:grid;place-items:center;color:#fff;font-style:normal;font-size:14px}
+nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+nav button{border:0;background:none;padding:6px 10px;border-radius:6px;color:var(--mute);font:inherit;font-size:14px;cursor:pointer}
+nav button.on{background:var(--soft);color:var(--ink);font-weight:600}
+section{display:none;padding:28px 0 60px}section.on{display:block}
+h1{font-size:32px;line-height:1.2;margin:8px 0 10px}h2{font-size:22px;margin:0 0 6px}h3{font-size:16px;margin:0 0 6px}
+.mute{color:var(--mute)}.tag{display:inline-block;font-size:12px;padding:2px 8px;border-radius:4px;background:var(--accs);color:var(--acc);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:10px;padding:16px;background:#fff}
+.soft{background:var(--soft);border:0}
+.btn{border:1px solid var(--acc);background:var(--acc);color:#fff;border-radius:8px;padding:9px 16px;font:inherit;font-weight:600;cursor:pointer}
+.btn.ghost{background:#fff;color:var(--acc)}
+.btn:disabled{opacity:.4;cursor:default}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.prog{height:6px;background:var(--soft);border-radius:9px;overflow:hidden;margin:10px 0 18px}.prog b{display:block;height:100%;background:var(--acc);width:0;transition:.3s}
+.opt{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#fff;border-radius:8px;padding:10px 12px;margin:6px 0;font:inherit;cursor:pointer}
+.opt:hover{background:var(--soft)}.opt:disabled,.conf button:disabled{color:var(--ink);cursor:default}.conf button.sel:disabled{color:#fff}.opt.sel{border-color:var(--acc);background:var(--accs)}
+.opt.ok{border-color:var(--g);background:var(--gs)}.opt.no{border-color:var(--r);background:var(--rs)}
+.conf{display:flex;gap:6px;margin:10px 0}.conf button{flex:1;border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 4px;font:inherit;font-size:13px;cursor:pointer}
+.conf button.sel{background:var(--ink);color:#fff;border-color:var(--ink)}
+.fb{border-left:3px solid var(--acc);background:var(--soft);padding:10px 12px;border-radius:0 8px 8px 0;margin:10px 0;font-size:14px}
+.pill{font-size:12px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--mute)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--mute);font-weight:500}td:first-child,td:nth-child(2){white-space:nowrap}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.G{background:var(--g)}.Y{background:var(--y)}.R{background:var(--r)}
+.chip{font-weight:700;padding:3px 10px;border-radius:6px;font-size:13px}.chip.G{background:var(--gs);color:var(--g)}.chip.Y{background:var(--ys);color:var(--y)}.chip.R{background:var(--rs);color:var(--r)}
+.kpi{font-size:26px;font-weight:700}
+.steps{counter-reset:s}.steps .card{position:relative;padding-left:52px}.steps .card:before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:24px;height:24px;border-radius:50%;background:var(--accs);color:var(--acc);font-weight:700;display:grid;place-items:center;font-size:13px}
+.note{font-size:13px;color:var(--mute)}
+footer{border-top:1px solid var(--line);padding:18px 0;font-size:13px;color:var(--mute)}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+  <div class="logo"><i>T</i>TUNASIAP</div>
+  <nav id="nav">
+    <button data-t="beranda" class="on">Beranda</button>
+    <button data-t="anak">Gladi Siswa</button>
+    <button data-t="ortu">Tebak Orang Tua</button>
+    <button data-t="kartu">Kartu Siap</button>
+    <button data-t="sekolah">Rekap Sekolah</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+<!-- BERANDA -->
+<section id="beranda" class="on">
+  <span class="tag">Purwarupa · Pilot Kota Cimahi 2027</span>
+  <h1>Siap dulu, baru restu.</h1>
+  <p class="mute" style="max-width:640px">TUNASIAP menguji kesiapan budaya digital siswa kelas X bersama orang tuanya sebelum persetujuan akun media sosial diberikan sesuai PP 17/2025. Hasilnya bukan nilai lulus, melainkan Kartu Siap yang menjadi bahan percakapan keluarga.</p>
+  <div class="row" style="margin:18px 0 26px">
+    <button class="btn" onclick="go('anak')">Mulai gladi siswa</button>
+    <button class="btn ghost" onclick="demo()">Isi contoh keluarga</button>
+  </div>
+  <div class="grid steps">
+    <div class="card"><h3>Asah · siswa</h3><p class="mute" style="margin:0">20 skenario tindakan, setiap jawaban ditandai tingkat keyakinan lalu langsung dijelaskan dampaknya.</p></div>
+    <div class="card"><h3>Asih · orang tua</h3><p class="mute" style="margin:0">Orang tua menebak pilihan anaknya pada skenario yang sama, bukan menjawab menurut pendapat sendiri.</p></div>
+    <div class="card"><h3>Asuh · keluarga</h3><p class="mute" style="margin:0">Kartu Siap per pilar berwarna hijau, kuning, atau merah beserta saran tindak lanjut bersama guru BK.</p></div>
+  </div>
+  <h3 style="margin-top:28px">Empat pilar yang diuji</h3>
+  <table><tr><th>Pilar</th><th>Skenario</th><th>Contoh situasi</th></tr>
+  <tr><td>Budaya digital</td><td>8</td><td>Grup kelas menertawakan logat teman dari daerah lain</td></tr>
+  <tr><td>Etika digital</td><td>4</td><td>Tangkapan layar obrolan pribadi akan disebar</td></tr>
+  <tr><td>Cakap digital</td><td>4</td><td>Video pidato tokoh diduga buatan AI</td></tr>
+  <tr><td>Aman digital</td><td>4</td><td>Orang mengaku petugas meminta kode OTP</td></tr></table>
+  <p class="note" style="margin-top:14px">Data tersimpan hanya di perangkat ini. Purwarupa tidak meminta akses ke akun media sosial siswa.</p>
+</section>
+
+<!-- GLADI SISWA -->
+<section id="anak">
+  <div class="row"><h2>Gladi Siswa</h2><span class="pill" id="aCount">1 / 20</span></div>
+  <div class="prog"><b id="aProg"></b></div>
+  <div class="card" id="aBox"></div>
+</section>
+
+<!-- TEBAK ORTU -->
+<section id="ortu">
+  <div class="row"><h2>Tebak Orang Tua</h2><span class="pill" id="oCount">1 / 20</span></div>
+  <p class="mute" style="margin:4px 0 0">Pilih jawaban yang menurut Anda akan dipilih anak Anda.</p>
+  <div class="prog"><b id="oProg"></b></div>
+  <div class="card" id="oBox"></div>
+</section>
+
+<!-- KARTU -->
+<section id="kartu"><div id="kBox"></div></section>
+
+<!-- SEKOLAH -->
+<section id="sekolah">
+  <h2>Rekap Sekolah</h2>
+  <p class="mute">Tampilan guru BK dan dinas pendidikan. Hanya agregat, tanpa nama siswa. Angka di bawah adalah data contoh untuk menunjukkan tampilan, bukan hasil pengukuran.</p>
+  <div class="grid" style="margin:16px 0">
+    <div class="card soft"><div class="note">Pasangan selesai</div><div class="kpi">96 / 100</div></div>
+    <div class="card soft"><div class="note">Orang tua mengisi</div><div class="kpi">78%</div></div>
+    <div class="card soft"><div class="note">Kartu merah perlu gladi ulang</div><div class="kpi">14</div></div>
+  </div>
+  <table><tr><th>Pilar</th><th>Hijau</th><th>Kuning</th><th>Merah</th><th>Rerata ketepatan</th></tr>
+  <tr><td>Budaya</td><td>41</td><td>44</td><td>11</td><td>66%</td></tr>
+  <tr><td>Etika</td><td>52</td><td>35</td><td>9</td><td>71%</td></tr>
+  <tr><td>Cakap</td><td>38</td><td>43</td><td>15</td><td>63%</td></tr>
+  <tr><td>Aman</td><td>47</td><td>36</td><td>13</td><td>68%</td></tr></table>
+  <p class="note">Rekap ini yang dapat diteruskan ke platform sebagai bukti edukasi Pasal 12 PP 17/2025. Data individu dihapus setelah 12 bulan.</p>
+</section>
+</main>
+<footer><div class="wrap">TUNASIAP · purwarupa esai EGG #9 2026 · I Dewa Putu Sanjaya Ditha, PKN STAN</div></footer>
+
+<script>
+const S=[
+["Budaya","Grup kelas menertawakan video logat teman dari daerah lain dan mengajakmu menyebarkannya.",["Ikut membagikan agar tidak dianggap kaku","Menambah komentar lucu saja","Diam dan keluar dari obrolan","Menegur pengunggah dan menguatkan teman itu secara pribadi"],3,"Diam membuat ejekan terasa wajar. Teguran singkat dan dukungan pribadi memutus rantai penyebaran."],
+["Budaya","Teman bercanda tentang cara beribadah teman lain di kolom komentar.",["Memberi tanda suka","Membalas dengan candaan serupa","Tidak menanggapi dan mengingatkan teman secara pribadi","Menyebarkan tangkapan layar ke grup lain"],2,"Candaan soal keyakinan mudah melukai. Mengingatkan secara pribadi menjaga martabat semua pihak."],
+["Budaya","Kamu ingin mengunggah ulang ilustrasi karya kreator lain.",["Mengunggah tanpa keterangan","Mengunggah dan mengaku karya sendiri","Mengunggah dengan menyebut dan menandai pembuatnya","Memotong tanda air agar lebih rapi"],2,"Menyebut pembuat adalah bentuk menghargai karya dan hak cipta."],
+["Budaya","Debat pemilihan ketua OSIS memanas dan pendukung calon lain diejek.",["Ikut mengejek balik","Menyampaikan pendapat tanpa merendahkan pihak lain","Membuat akun anonim untuk menyindir","Menyebar meme calon lawan"],1,"Beda pilihan wajar. Merendahkan orang lain memecah warga sekolah."],
+["Budaya","Kamu membalas komentar dengan ungkapan daerah yang bisa terdengar kasar bagi pembaca dari daerah lain.",["Tetap memakai karena itu bahasa sendiri","Menyesuaikan bahasa agar tidak menyinggung","Menghapus akun","Menantang yang tersinggung"],1,"Ruang digital dibaca orang dari banyak daerah. Bahasa disesuaikan dengan pembacanya."],
+["Budaya","Tren video memakai pakaian adat daerah lain sebagai bahan lelucon.",["Ikut tren agar ramai","Mengomentari pakaian adatnya aneh","Tidak ikut atau membuat konten yang menghormati maknanya","Menandai teman dari daerah itu untuk diejek"],2,"Pakaian adat punya makna. Menjadikannya lelucon merendahkan pemilik budayanya."],
+["Budaya","Tugas kelompok mengunggah tarian daerah ke media sosial.",["Mengunggah tanpa keterangan","Mengunggah dengan keterangan asal dan makna tariannya","Memakai musik viral agar ramai saja","Tidak usah mengunggah"],1,"Keterangan asal dan makna mengubah unggahan menjadi pengenalan budaya."],
+["Budaya","Pesan berantai menyalahkan satu kelompok daerah atas sebuah kejadian.",["Meneruskan ke grup keluarga","Menambahkan pendapat pribadi lalu meneruskan","Tidak meneruskan dan memeriksa sumbernya","Membalas dengan menyalahkan kelompok lain"],2,"Tuduhan pada satu kelompok mudah memicu kebencian. Periksa sumber sebelum percaya."],
+["Etika","Akun anonim mengadakan pemungutan suara teman paling jelek.",["Ikut memilih","Membagikan agar ramai","Tidak ikut dan melaporkan akun","Menebak siapa pemilik akun di grup"],2,"Ikut memilih berarti ikut merundung. Melapor menghentikan akun."],
+["Etika","Tangkapan layar obrolan pribadi teman akan disebar ke grup.",["Ikut menyebarkan","Tidak menyebarkan tanpa izin pemiliknya","Menyimpan untuk jaga-jaga","Mengomentari isi obrolannya"],1,"Obrolan pribadi adalah data pribadi. Menyebarkan tanpa izin melanggar privasi."],
+["Etika","Kamu ingin mengunggah foto teman yang tertidur di kelas.",["Mengunggah karena lucu","Meminta izin atau tidak mengunggah","Mengunggah di cerita 24 jam saja","Mengirim ke grup kelas"],1,"Unggahan sementara tetap bisa direkam orang lain. Izin pemilik wajah selalu didahulukan."],
+["Etika","Teman diserbu komentar kasar setelah mengunggah karyanya.",["Membiarkan karena bukan urusanmu","Ikut berkomentar agar adil","Mendukung korban dan melapor lewat fitur lapor atau guru BK","Menyuruh teman menghapus akun"],2,"Satu dukungan terbuka mengurangi rasa terisolasi korban."],
+["Cakap","Video pidato tokoh terdengar janggal dan diduga buatan AI.",["Langsung membagikan","Memeriksa kanal resmi sebelum percaya atau membagikan","Percaya karena videonya jelas","Mengomentari tokohnya"],1,"Suara dan wajah kini mudah dipalsukan. Kanal resmi adalah rujukan pertama."],
+["Cakap","Judul berita sensasional dengan isi yang tidak jelas.",["Membagikan judulnya","Membaca isi dan sumber sebelum membagikan","Berkomentar berdasarkan judul","Mengirim ke keluarga"],1,"Judul dirancang memancing emosi. Isi dan sumber menentukan kebenarannya."],
+["Cakap","Tangkapan layar pengumuman sekolah tampak diedit.",["Meneruskan ke grup kelas","Mengecek kebenarannya di kanal resmi sekolah","Mengabaikan saja","Mengubahnya agar lebih jelas"],1,"Pengumuman palsu mudah dibuat. Cek ke kanal resmi sebelum bertindak."],
+["Cakap","Teman menyarankan akun dibuat publik agar cepat viral.",["Langsung dibuat publik","Mengatur privasi akun sesuai kebutuhan","Membuat akun kedua publik dengan data asli","Membeli pengikut"],1,"Akun publik membuka data pribadi ke orang asing. Atur privasi sejak awal."],
+["Aman","Tautan hadiah pulsa gratis dari nomor tak dikenal.",["Membuka untuk mencoba","Meneruskan ke teman","Tidak membuka tautan dan menghapus pesan","Membalas menanyakan hadiahnya"],2,"Tautan hadiah adalah pola penipuan yang umum."],
+["Aman","Akun baru meminta foto kartu pelajar dan alamat rumah.",["Mengirim karena tampak ramah","Mengirim sebagian saja","Menolak, memblokir, dan memberi tahu orang tua","Menanyakan alasannya dulu lalu mengirim"],2,"Data identitas dapat dipakai untuk pemerasan. Ceritakan pada orang tua."],
+["Aman","Seseorang mengaku petugas dan meminta kode OTP.",["Memberikan karena petugas","Memberikan setelah ditanya nama","Tidak memberikan kode dan memberi tahu orang tua","Mengirim sebagian angka"],2,"Petugas resmi tidak pernah meminta kode OTP."],
+["Aman","Iklan aplikasi permainan menjanjikan hadiah uang.",["Mengunduh dan mencoba","Mengajak teman mengunduh","Tidak mengunduh dan melaporkan iklan","Mendaftar dengan nomor orang tua"],2,"Janji uang mudah adalah ciri aplikasi berisiko."]
+];
+const PIL=["Budaya","Etika","Cakap","Aman"],CL=["Ragu","Cukup yakin","Sangat yakin"];
+let st={a:[],c:[],o:[]};
+try{const x=JSON.parse(localStorage.getItem("tunasiap"));if(x)st=x}catch(e){}
+const save=()=>{try{localStorage.setItem("tunasiap",JSON.stringify(st))}catch(e){}};
+let ai=0,oi=0,tmp={p:null,c:null,done:false};
+const $=i=>document.getElementById(i);
+function go(t){document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id==t));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t==t));if(t=='anak')rA();if(t=='ortu')rO();if(t=='kartu')rK();scrollTo(0,0)}
+$('nav').onclick=e=>{if(e.target.dataset.t)go(e.target.dataset.t)};
+function rA(){ai=Math.min(st.a.length,19);if(st.a.length>=20){$('aBox').innerHTML='<h3>Gladi selesai</h3><p class="mute">Lanjutkan dengan tebakan orang tua.</p><button class="btn" onclick="go(\'ortu\')">Ke Tebak Orang Tua</button>';$('aProg').style.width='100%';$('aCount').textContent='20 / 20';return}
+ tmp={p:null,c:null,done:false};drawA()}
+function drawA(){const s=S[ai];$('aCount').textContent=(ai+1)+' / 20';$('aProg').style.width=(ai/20*100)+'%';
+ let h=`<span class="tag">Pilar ${s[0]}</span><h3 style="margin-top:10px">${s[1]}</h3>`;
+ s[2].forEach((o,i)=>{let c='opt';if(tmp.done){if(i==s[3])c+=' ok';else if(i==tmp.p)c+=' no'}else if(i==tmp.p)c+=' sel';h+=`<button class="${c}" ${tmp.done?'disabled':''} onclick="tmp.p=${i};drawA()">${String.fromCharCode(65+i)}. ${o}</button>`});
+ h+=`<div class="note" style="margin-top:12px">Seberapa yakin kamu?</div><div class="conf">`+CL.map((c,i)=>`<button class="${tmp.c==i?'sel':''}" ${tmp.done?'disabled':''} onclick="tmp.c=${i};drawA()">${c}</button>`).join('')+`</div>`;
+ if(tmp.done)h+=`<div class="fb"><b>${tmp.p==s[3]?'Tepat.':'Belum tepat.'}</b> ${s[4]}</div><button class="btn" onclick="nextA()">${ai<19?'Skenario berikutnya':'Selesai'}</button>`;
+ else h+=`<button class="btn" ${tmp.p==null||tmp.c==null?'disabled':''} onclick="tmp.done=true;drawA()">Kunci jawaban</button>`;
+ $('aBox').innerHTML=h}
+function nextA(){st.a[ai]=tmp.p;st.c[ai]=tmp.c;save();rA()}
+function rO(){if(st.o.length>=20){$('oBox').innerHTML='<h3>Tebakan selesai</h3><button class="btn" onclick="go(\'kartu\')">Lihat Kartu Siap</button>';$('oProg').style.width='100%';$('oCount').textContent='20 / 20';return}
+ oi=st.o.length;const s=S[oi];$('oCount').textContent=(oi+1)+' / 20';$('oProg').style.width=(oi/20*100)+'%';
+ let h=`<span class="tag">Pilar ${s[0]}</span><h3 style="margin-top:10px">${s[1]}</h3><div class="note">Apa yang akan dipilih anak Anda?</div>`;
+ s[2].forEach((o,i)=>h+=`<button class="opt" onclick="st.o[${oi}]=${i};save();rO()">${String.fromCharCode(65+i)}. ${o}</button>`);
+ $('oBox').innerHTML=h}
+function warna(n,t,k){const acc=t/n,ky=k/n;if(acc<=.25||ky>=.5)return'R';if(acc>=.75&&k==0)return'G';return'Y'}
+const SAR={G:'Restu dapat diberikan. Tetap bicarakan aturan bersama.',Y:'Restu disertai fitur pengawasan orang tua di platform dan percakapan rutin.',R:'Tunda restu, gladi ulang setelah 30 hari bersama guru BK.'};
+function rK(){if(st.a.length<20){$('kBox').innerHTML='<h2>Kartu Siap</h2><p class="mute">Kartu terbit setelah gladi siswa dan tebakan orang tua selesai.</p><button class="btn ghost" onclick="demo()">Isi contoh keluarga</button>';return}
+ let rows='',meleset=0,nO=0;
+ PIL.forEach(p=>{let n=0,t=0,k=0;S.forEach((s,i)=>{if(s[0]==p){n++;const ok=st.a[i]==s[3];if(ok)t++;else if(st.c[i]==2)k++}});const w=warna(n,t,k);
+  rows+=`<tr><td><span class="dot ${w}"></span>${p}</td><td>${t} / ${n} (${Math.round(t/n*100)}%)</td><td>${k}</td><td><span class="chip ${w}">${{G:'Hijau',Y:'Kuning',R:'Merah'}[w]}</span></td><td style="font-size:13px">${SAR[w]}</td></tr>`});
+ S.forEach((s,i)=>{if(st.o[i]!=null){nO++;if(st.o[i]!=st.a[i])meleset++}});
+ const tot=st.a.filter((a,i)=>a==S[i][3]).length;
+ $('kBox').innerHTML=`<div class="row"><h2>Kartu Siap</h2><span class="pill">Keluarga contoh · Kelas X</span></div>
+ <p class="mute">Bahan percakapan keluarga, bukan sertifikat. Keputusan akhir tetap milik orang tua.</p>
+ <div class="grid" style="margin:14px 0">
+  <div class="card soft"><div class="note">Ketepatan total</div><div class="kpi">${tot} / 20</div></div>
+  <div class="card soft"><div class="note">Keliru tetapi sangat yakin</div><div class="kpi">${st.a.filter((a,i)=>a!=S[i][3]&&st.c[i]==2).length}</div></div>
+  <div class="card soft"><div class="note">Tebakan orang tua meleset</div><div class="kpi">${nO?Math.round(meleset/nO*100)+'%':'belum diisi'}</div></div>
+ </div>
+ <table><tr><th>Pilar</th><th>Ketepatan</th><th>Keliru sangat yakin</th><th>Warna</th><th>Saran</th></tr>${rows}</table>
+ <div class="card soft" style="margin-top:16px"><h3>Cara membaca warna</h3><p class="note" style="margin:0">Merah bila ketepatan 25% atau kurang (setara menebak acak dari empat pilihan) atau separuh skenario pilar dijawab keliru dengan sangat yakin. Hijau bila ketepatan minimal 75% tanpa jawaban keliru yang sangat yakin. Selain itu kuning.</p></div>
+ <div class="row" style="margin-top:16px"><button class="btn ghost" onclick="reset()">Ulangi dari awal</button></div>`}
+function demo(){const pick=[3,2,2,1,0,2,1,0, 2,1,1,2, 0,1,1,1, 0,0,0,2];const cf=[2,1,2,1,2,1,1,2, 1,2,1,1, 2,2,1,1, 2,1,1,2];
+ const ot=[3,2,2,1,1,2,1,2, 2,1,1,2, 1,1,1,1, 2,2,2,2];st={a:pick,c:cf,o:ot};save();go('kartu')}
+function reset(){st={a:[],c:[],o:[]};save();go('beranda')}
+if(location.hash){const t=location.hash.slice(1);if(t=='demo')demo();else go(t)}
+</script>
+</body>
+</html>
